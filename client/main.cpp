@@ -1,4 +1,6 @@
 #include <QDebug>
+#include <QIcon>
+#include <QStyleHints>
 #include <QTimer>
 #include <libssh/libssh.h>
 #include <openssl/ssl.h>
@@ -79,6 +81,8 @@ int main(int argc, char *argv[])
     app.setApplicationName(APPLICATION_NAME);
     app.setOrganizationName(ORGANIZATION_NAME);
     app.setApplicationDisplayName(APPLICATION_DISPLAY_NAME);
+    app.setWindowIcon(QIcon(":/images/icon.png"));
+    QGuiApplication::styleHints()->setColorScheme(Qt::ColorScheme::Light);
 
     app.loadFonts();
 

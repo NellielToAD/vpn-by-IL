@@ -4,6 +4,7 @@
     </qresource>
     <qresource prefix="/images">
         <file>vpnByIlLogo.png</file>
+        <file>icon.png</file>
         <file>AmneziaVPN.png</file>
         <file>controls/alert-circle.svg</file>
         <file>controls/alert-triangle.svg</file>
