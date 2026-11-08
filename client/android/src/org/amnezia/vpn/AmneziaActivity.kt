@@ -431,8 +431,8 @@ class AmneziaActivity : QtActivity() {
             }
 
             WindowInsetsControllerCompat(window, window.decorView).apply {
-                isAppearanceLightStatusBars = false
-                isAppearanceLightNavigationBars = false
+                isAppearanceLightStatusBars = true
+                isAppearanceLightNavigationBars = true
             }
 
             // Workaround for Android 14 (API 34+) IME adjustResize bug
@@ -442,12 +442,12 @@ class AmneziaActivity : QtActivity() {
         } else {
             window.apply {
                 addFlags(LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-                statusBarColor = getColor(R.color.black)
+                statusBarColor = getColor(R.color.app_background)
             }
 
             WindowInsetsControllerCompat(window, window.decorView).apply {
-                isAppearanceLightStatusBars = false
-                isAppearanceLightNavigationBars = false
+                isAppearanceLightStatusBars = true
+                isAppearanceLightNavigationBars = true
             }
         }
     }

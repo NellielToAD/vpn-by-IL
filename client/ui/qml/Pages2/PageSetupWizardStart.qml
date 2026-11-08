@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import QtQuick.Window
 
 import PageEnum 1.0
 import Style 1.0
@@ -26,11 +27,26 @@ PageType {
         anchors.topMargin: 16 + PageController.safeAreaTopMargin
         anchors.bottomMargin: 96 + PageController.safeAreaBottomMargin
 
-        H1TextType {
+        ColumnLayout {
             anchors.centerIn: parent
             width: parent.width - 32
-            horizontalAlignment: Text.AlignHCenter
-            text: Qt.application.displayName
+            spacing: 24
+
+            Image {
+                Layout.alignment: Qt.AlignHCenter
+                Layout.preferredWidth: 200
+                Layout.preferredHeight: 200
+
+                source: "qrc:/images/vpnByIlLogo.png"
+                sourceSize: Qt.size(200 * Screen.devicePixelRatio, 200 * Screen.devicePixelRatio)
+                fillMode: Image.PreserveAspectFit
+            }
+
+            H1TextType {
+                Layout.fillWidth: true
+                horizontalAlignment: Text.AlignHCenter
+                text: Qt.application.displayName
+            }
         }
     }
 

@@ -51,11 +51,11 @@ PageType {
                 id: image
 
                 Layout.alignment: Qt.AlignHCenter
-                Layout.preferredWidth: 153
-                Layout.preferredHeight: 131
+                Layout.preferredWidth: 140
+                Layout.preferredHeight: 140
 
-                source: "qrc:/images/amneziaLogo.svg"
-                sourceSize: Qt.size(153 * Screen.devicePixelRatio, 131 * Screen.devicePixelRatio)
+                source: "qrc:/images/vpnByIlLogo.png"
+                sourceSize: Qt.size(140 * Screen.devicePixelRatio, 140 * Screen.devicePixelRatio)
                 fillMode: Image.PreserveAspectFit
             }
 
