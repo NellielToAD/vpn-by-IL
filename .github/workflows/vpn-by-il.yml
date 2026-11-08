@@ -27,6 +27,8 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.14'
+      - name: Verify installer isolation
+        run: node --test tests/installer-branding.test.cjs
       - name: Install Conan
         run: python -m pip install conan==2.28.0
       - uses: jurplel/install-qt-action@v4.3.1
@@ -46,10 +48,21 @@ jobs:
         env:
           QT_INSTALL_DIR: ${{ runner.temp }}
         run: deploy\build.bat --installer ifw
+      - name: Verify built installer identity
+        shell: pwsh
+        run: |
+          $configs = @(Get-ChildItem deploy/build/_CPack_Packages -Recurse -Filter config.xml)
+          if ($configs.Count -ne 1) { throw 'Expected one IFW installer configuration' }
+          [xml]$config = Get-Content -LiteralPath $configs[0].FullName -Raw
+          if ($config.Installer.Name -ne 'VPN by IL' -or $config.Installer.Title -ne 'VPN by IL') { throw 'Incorrect installer display name' }
+          if ($config.Installer.TargetDir -notmatch '/VPNbyIL$') { throw 'Incorrect installation directory' }
+          foreach ($name in @('VPNbyIL.exe', 'VPNbyIL-service.exe')) {
+            if (-not (Get-ChildItem deploy/build/_CPack_Packages -Recurse -Filter $name)) { throw "Missing packaged executable: $name" }
+          }
       - uses: actions/upload-artifact@v4
         with:
-          name: Amnezia-VPN-by-IL-Windows-x64
-          path: deploy/build/AmneziaVPN_*_windows_x64.exe
+          name: VPN-by-IL-Windows-x64
+          path: deploy/build/VPN-by-IL_*_windows_x64.exe
           if-no-files-found: error
           retention-days: 14
 
@@ -140,9 +153,17 @@ jobs:
           QT_INSTALL_DIR: ${{ runner.temp }}
           ABI: ${{ matrix.abi }}
         run: deploy/build.sh -t android --sign --abi "$ABI"
+      - name: Name Android package
+        run: mv deploy/build/client/android-build/AmneziaVPN.apk "deploy/build/client/android-build/VPN-by-IL-${{ matrix.abi }}.apk"
+      - name: Verify built Android identity
+        run: |
+          "$ANDROID_HOME/build-tools/36.0.0/aapt" dump badging "deploy/build/client/android-build/VPN-by-IL-${{ matrix.abi }}.apk" > "$RUNNER_TEMP/apk-branding.txt"
+          grep -q "package: name='app.vpnbyil.client'" "$RUNNER_TEMP/apk-branding.txt"
+          grep -q "application-label:'VPN by IL'" "$RUNNER_TEMP/apk-branding.txt"
+          grep -q "leanback-launchable-activity:" "$RUNNER_TEMP/apk-branding.txt"
       - uses: actions/upload-artifact@v4
         with:
-          name: Amnezia-VPN-by-IL-Android-TV-${{ matrix.abi }}
-          path: deploy/build/client/android-build/AmneziaVPN.apk
+          name: VPN-by-IL-Android-TV-${{ matrix.abi }}
+          path: deploy/build/client/android-build/VPN-by-IL-${{ matrix.abi }}.apk
           if-no-files-found: error
           retention-days: 14

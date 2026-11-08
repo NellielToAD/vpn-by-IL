@@ -3368,7 +3368,7 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettings.qml" line="126"/>
-        <source>About AmneziaVPN</source>
+        <source>About VPN by IL</source>
         <translation>关于</translation>
     </message>
     <message>
@@ -3381,8 +3381,8 @@ Create one from the current settings.</source>
     <name>PageSettingsAbout</name>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="22"/>
-        <source>You have the latest version of AmneziaVPN</source>
-        <translation>您已使用最新版本的 AmneziaVPN</translation>
+        <source>You have the latest version of VPN by IL</source>
+        <translation>您已使用最新版本的 VPN by IL</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="26"/>

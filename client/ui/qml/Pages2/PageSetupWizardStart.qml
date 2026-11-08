@@ -26,15 +26,11 @@ PageType {
         anchors.topMargin: 16 + PageController.safeAreaTopMargin
         anchors.bottomMargin: 96 + PageController.safeAreaBottomMargin
 
-        Image {
+        H1TextType {
             anchors.centerIn: parent
-
-            width: 153
-            height: 131
-
-            source: "qrc:/images/amneziaLogo.svg"
-            sourceSize: Qt.size(153 * Screen.devicePixelRatio, 131 * Screen.devicePixelRatio)
-            fillMode: Image.PreserveAspectFit
+            width: parent.width - 32
+            horizontalAlignment: Text.AlignHCenter
+            text: Qt.application.displayName
         }
     }
 

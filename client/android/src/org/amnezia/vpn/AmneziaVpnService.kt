@@ -60,8 +60,8 @@ import org.json.JSONObject
 
 private const val TAG = "AmneziaVpnService"
 
-const val ACTION_DISCONNECT = "org.amnezia.vpn.action.disconnect"
-const val ACTION_CONNECT = "org.amnezia.vpn.action.connect"
+const val ACTION_DISCONNECT = "app.vpnbyil.client.action.disconnect"
+const val ACTION_CONNECT = "app.vpnbyil.client.action.connect"
 
 const val MSG_VPN_CONFIG = "VPN_CONFIG"
 const val MSG_ERROR = "ERROR"

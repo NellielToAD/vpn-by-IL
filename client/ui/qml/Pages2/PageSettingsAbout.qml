@@ -19,7 +19,7 @@ PageType {
         target: UpdateController
 
         function onUpdateNotFound() {
-            PageController.showNotificationMessage(qsTr("You have the latest version of AmneziaVPN"))
+            PageController.showNotificationMessage(qsTr("You have the latest version of VPN by IL"))
         }
 
         function onUpdateCheckFailed() {
@@ -66,7 +66,7 @@ PageType {
                 Layout.rightMargin: 16
 
                 horizontalAlignment: Text.AlignHCenter
-                text: qsTr("Support Amnezia")
+                text: Qt.application.displayName
             }
 
             BodyTextType {
@@ -199,6 +199,7 @@ PageType {
 
                     ButtonType {
                         id: checkUpdatesButton
+                        visible: false
 
                         Layout.alignment: Qt.AlignHCenter
                         Layout.maximumWidth: content.width - 32

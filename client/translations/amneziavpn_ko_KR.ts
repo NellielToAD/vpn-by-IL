@@ -3368,8 +3368,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettings.qml" line="126"/>
-        <source>About AmneziaVPN</source>
-        <translation>AmneziaVPN 정보</translation>
+        <source>About VPN by IL</source>
+        <translation>VPN by IL 정보</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettings.qml" line="140"/>
@@ -3381,8 +3381,8 @@ Create one from the current settings.</source>
     <name>PageSettingsAbout</name>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="22"/>
-        <source>You have the latest version of AmneziaVPN</source>
-        <translation>최신 버전의 AmneziaVPN을 사용 중입니다</translation>
+        <source>You have the latest version of VPN by IL</source>
+        <translation>최신 버전의 VPN by IL을 사용 중입니다</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="26"/>

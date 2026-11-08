@@ -1,14 +1,20 @@
 set(CPACK_PACKAGE_VENDOR            AmneziaVPN)
 set(CPACK_PACKAGE_VERSION           ${AMNEZIAVPN_VERSION})
 if(WIN32)
-    set(CPACK_PACKAGE_FILE_NAME "AmneziaVPN_${AMNEZIAVPN_VERSION}_windows_x64")
+    set(CPACK_PACKAGE_NAME "${APP_DISPLAY_NAME}")
+    set(CPACK_PACKAGE_VENDOR "${APP_DISPLAY_NAME}")
+    set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${APP_DISPLAY_NAME}")
+    set(CPACK_PACKAGE_FILE_NAME "VPN-by-IL_${AMNEZIAVPN_VERSION}_windows_x64")
 elseif(APPLE AND NOT IOS AND NOT MACOS_NE)
     set(CPACK_PACKAGE_FILE_NAME "AmneziaVPN_${AMNEZIAVPN_VERSION}_macos_x64")
 elseif(LINUX AND NOT ANDROID)
     set(CPACK_PACKAGE_FILE_NAME "AmneziaVPN_${AMNEZIAVPN_VERSION}_linux_x64")
 endif()
 set(CPACK_PACKAGE_INSTALL_DIRECTORY AmneziaVPN)
-set(CPACK_PACKAGE_EXECUTABLES       AmneziaVPN AmneziaVPN)
+if(WIN32)
+    set(CPACK_PACKAGE_INSTALL_DIRECTORY VPNbyIL)
+endif()
+set(CPACK_PACKAGE_EXECUTABLES       VPNbyIL "${APP_DISPLAY_NAME}")
 set(CPACK_PRE_BUILD_SCRIPTS         ${CMAKE_CURRENT_LIST_DIR}/sign_binaries.cmake)
 set(CPACK_POST_BUILD_SCRIPTS        ${CMAKE_CURRENT_LIST_DIR}/sign_packages.cmake)
 set(CPACK_PROJECT_CONFIG_FILE       ${CMAKE_CURRENT_LIST_DIR}/CPackOptions.cmake)
@@ -25,6 +31,10 @@ endif()
 # === CPack IFW generator settings ===
 set(CPACK_IFW_PACKAGE_NAME                          AmneziaVPN)
 set(CPACK_IFW_PACKAGE_TITLE                         AmneziaVPN)
+if(WIN32)
+    set(CPACK_IFW_PACKAGE_NAME "${APP_DISPLAY_NAME}")
+    set(CPACK_IFW_PACKAGE_TITLE "${APP_DISPLAY_NAME}")
+endif()
 set(CPACK_IFW_PACKAGE_WIZARD_DEFAULT_WIDTH          600)
 set(CPACK_IFW_PACKAGE_WIZARD_DEFAULT_HEIGHT         380)
 set(CPACK_IFW_PACKAGE_WIZARD_STYLE                  Modern)
@@ -35,7 +45,7 @@ set(CPACK_IFW_PACKAGE_CONTROL_SCRIPT                ${CMAKE_SOURCE_DIR}/deploy/i
 
 # === CPack WIX generator settings ===
 set(CPACK_WIX_VERSION               4)
-set(CPACK_WIX_UPGRADE_GUID          "{2D55AC62-96D6-4692-8C05-0D85BBF95485}")
+set(CPACK_WIX_UPGRADE_GUID          "{A76D4E6F-2805-4CED-872C-89754F52ADBE}")
 set(CPACK_WIX_PRODUCT_ICON          ${CMAKE_SOURCE_DIR}/client/images/app.ico)
 set(CPACK_WIX_CUSTOM_XMLNS          "util=http://wixtoolset.org/schemas/v4/wxs/util")
 set(_AMNEZIA_WIX_PATCH_SERVICE      ${CMAKE_SOURCE_DIR}/deploy/installer/wix/service_install_patch.xml)
@@ -94,6 +104,7 @@ endif()
 
 include(CPackIFW)
 cpack_ifw_configure_component(AmneziaVPN
+    DISPLAY_NAME "${APP_DISPLAY_NAME}"
     VERSION ${AMNEZIAVPN_VERSION}
     RELEASE_DATE ${RELEASE_DATE}
     REQUIRES_ADMIN_RIGHTS
@@ -103,7 +114,7 @@ cpack_ifw_configure_component(AmneziaVPN
 
 include(CPack)
 cpack_add_component(Uninstall
-    DISPLAY_NAME "Uninstall AmneziaVPN"
+    DISPLAY_NAME "Uninstall ${APP_DISPLAY_NAME}"
     REQUIRES_ADMIN_RIGHTS
     DISABLED
 )

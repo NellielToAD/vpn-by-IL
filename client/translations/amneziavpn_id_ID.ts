@@ -3368,8 +3368,8 @@ Buat satu dari pengaturan saat ini.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettings.qml" line="126"/>
-        <source>About AmneziaVPN</source>
-        <translation>Tentang AmneziaVPN</translation>
+        <source>About VPN by IL</source>
+        <translation>Tentang VPN by IL</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettings.qml" line="140"/>
@@ -3381,8 +3381,8 @@ Buat satu dari pengaturan saat ini.</translation>
     <name>PageSettingsAbout</name>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="22"/>
-        <source>You have the latest version of AmneziaVPN</source>
-        <translation>Anda memiliki versi terbaru AmneziaVPN</translation>
+        <source>You have the latest version of VPN by IL</source>
+        <translation>Anda memiliki versi terbaru VPN by IL</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="26"/>

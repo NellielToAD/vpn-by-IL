@@ -12,7 +12,7 @@ function appName()
 function appExecutableFileName()
 {
     if (runningOnWindows()) {
-        return appName() + ".exe";
+        return "VPNbyIL.exe";
     } else {
         return appName();
     }
@@ -21,8 +21,8 @@ function appExecutableFileName()
 function appInstalled()
 {
     if (runningOnWindows()) {
-        appInstalledUninstallerPath = installer.value("RootDir") + "Program Files/AmneziaVPN/maintenancetool.exe";
-        appInstalledUninstallerPath_x86 = installer.value("RootDir") + "Program Files (x86)/AmneziaVPN/maintenancetool.exe";
+        appInstalledUninstallerPath = installer.value("RootDir") + "Program Files/VPNbyIL/maintenancetool.exe";
+        appInstalledUninstallerPath_x86 = installer.value("RootDir") + "Program Files (x86)/VPNbyIL/maintenancetool.exe";
     } else if (runningOnMacOS()){
         appInstalledUninstallerPath = "/Applications/" + appName() + ".app/maintenancetool.app/Contents/MacOS/maintenancetool";
     } else if (runningOnLinux()){
@@ -207,8 +207,8 @@ onBrowseButtonClicked = function()
         if (runningOnWindows()) {
             // On Windows we are appending \<APP_NAME> if selected path don't ends with <APP_NAME>
             var targetDir = widget.TargetDirectoryLineEdit.text;
-            if (! endsWith(targetDir, appName())) {
-                targetDir = targetDir + "\\" + appName();
+            if (! endsWith(targetDir, "VPNbyIL")) {
+                targetDir = targetDir + "\\VPNbyIL";
             }
             installer.setValue("TargetDir", targetDir);
             widget.TargetDirectoryLineEdit.setText(installer.value("TargetDir"));
