@@ -257,7 +257,8 @@ class IntroPage extends HookConsumerWidget with PresLogger {
       case "TR":
         return RegionLocale(Region.tr, AppLocale.tr);
       default:
-        return RegionLocale(Region.other, AppLocale.en);
+        // VPN by IL: Russia is the default region and language.
+        return RegionLocale(Region.ru, AppLocale.ru);
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "common": {
-    "appTitle": "Hiddify",
+    "appTitle": "VPN by IL",
     "start": "Comenzar",
     "version": "Versión",
     "ok": "Aceptar",
@@ -203,7 +203,7 @@
         "received": "Recibido desde tu teléfono",
         "from": "Desde $address",
         "page": {
-          "title": "Enviar a Hiddify en tu televisor",
+          "title": "Enviar a VPN by IL en tu televisor",
           "intro": "Añade una suscripción al televisor en cuatro pasos, sin escribirla con el mando.",
           "steps": {
             "network": {
@@ -799,7 +799,7 @@
       "updateNow": "Actualizar ahora",
       "downloading": "Descargando…",
       "installing": "Iniciando el instalador…",
-      "allowInstall": "Permite que Hiddify instale aplicaciones en los ajustes que se abrieron y vuelve a intentarlo.",
+      "allowInstall": "Permite que VPN by IL instale aplicaciones en los ajustes que se abrieron y vuelve a intentarlo.",
       "failed": "No se pudo instalar la actualización.",
       "openPage": "Abrir la página de la versión",
       "tryAgain": "Reintentar"
@@ -839,7 +839,7 @@
     "adminBgService": {
       "vpnNeedsAdmin": {
         "title": "Se necesita permiso de administrador",
-        "msg": "El modo VPN necesita un permiso de administrador único para instalar el servicio en segundo plano de Hiddify. Después, puedes conectarte sin otra solicitud.",
+        "msg": "El modo VPN necesita un permiso de administrador único para instalar el servicio en segundo plano de VPN by IL. Después, puedes conectarte sin otra solicitud.",
         "connectWithAdmin": "Conectar con permiso de administrador",
         "waitingTitle": "Esperando el permiso de administrador",
         "waitingMsg": "Acepta la solicitud de administrador para continuar. Puedes detenerte y volver a intentarlo más tarde.",
@@ -928,7 +928,7 @@
     },
     "keepTop": {
       "title": "Una suscripción grande",
-      "description": "Este perfil tiene $count proxies. Mantenerlos todos activos gasta batería, datos y memoria. Hiddify puede probarlos una vez, dejar activos los $keep más rápidos y pausar el resto.",
+      "description": "Este perfil tiene $count proxies. Mantenerlos todos activos gasta batería, datos y memoria. VPN by IL puede probarlos una vez, dejar activos los $keep más rápidos y pausar el resto.",
       "hint": "Puedes volver a activarlos todos cuando quieras, al final de la lista de proxies.",
       "keeping": "Funcionan los $keep más rápidos, el resto en pausa",
       "all": "Funcionan los $count",

@@ -1,9 +1,9 @@
-app_id: 6L903538-42B1-4596-G479-BJ779F21A65D
-publisher_name: Hiddify
-publisher_url: https://github.com/hiddify/hiddify-app
-display_name: Hiddify
+app_id: C32307A2-1938-41F1-AC7C-5FAA8AC3862F
+publisher_name: IL
+publisher_url: https://github.com/NellielToAD/vpn-by-il
+display_name: VPN by IL
 create_desktop_icon: true
-install_dir_name: "{autopf64}\\Hiddify"
+install_dir_name: "{autopf64}\\VPN by IL"
 setup_icon_file: windows\runner\resources\app_icon.ico
 locales:
   - ar
